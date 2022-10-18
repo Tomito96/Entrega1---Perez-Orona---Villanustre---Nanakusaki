@@ -1,0 +1,5 @@
+
+        <p>Listado de personas:</p>
+        {% for persona in personas %}
+        <li>Nombre: {{persona.nombre}} <p>Apellido: {{persona.apellido}}</p> <p>Edad: {{persona.edad}}</p> <p>Fecha de Nacimiento: {{persona.fecha_nacimiento}}</p></li> 
+        {% endfor %}
