@@ -50,14 +50,22 @@ def prueba_template(request):
 
     return HttpResponse(template_renderizado)
 
-def crear_persona(request, nombre, apellido):
-    persona = Persona(nombre = nombre , apellido = apellido , edad= random.randrange(1,99), fecha_nacimiento=datetime.now())
-    persona.save()
-    return render(request, 'home/crear_persona.html', {'persona': persona})
+def crear_persona(request):
 
-    #template = loader.get_template('crear_persona.html')
-    #template_renderizado = template.render({'persona': persona})
-    #return HttpResponse(template_renderizado)
+    #nombre = request.POST
+    #apellido = request.POST
+    
+    if request.method == 'POST':
+        nombre= request.POST.get('nombre')
+        apellido= request.POST.get('apellido')
+    
+        persona = Persona(nombre = nombre , apellido = apellido , edad= random.randrange(1,99), fecha_nacimiento=datetime.now())
+        persona.save()
+    #return render(request, 'home/crear_persona.html', {'persona': persona})
+
+    template = loader.get_template('crear_persona.html')
+    template_renderizado = template.render({})
+    return HttpResponse(template_renderizado)
 
 def ver_persona(request):
 

@@ -9,6 +9,6 @@ urlpatterns = [
     path('mi-template/<str:nombre>',views.tu_template),
     path('prueba-template/',views.prueba_template),
     path('ver-personas/',views.ver_persona, name= 'ver_persona'),
-    path('crear-persona/<str:nombre>/<str:apellido>/',views.crear_persona),
+    path('crear-persona/',views.crear_persona, name= 'crear_persona'),
     path('',views.index, name= 'index'),
   ]

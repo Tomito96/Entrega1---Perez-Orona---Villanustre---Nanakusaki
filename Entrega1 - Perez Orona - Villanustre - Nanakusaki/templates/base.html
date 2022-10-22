@@ -5,6 +5,7 @@
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
         <meta name="description" content="" />
+        {% block titulo_pagina %} <title> Ver Personas </title> {% endblock titulo_pagina %}
         <meta name="author" content="" />
         <title>Landing Page - Start Bootstrap Theme</title>
         <!-- Favicon-->
@@ -26,6 +27,8 @@
                 <a class="navbar-brand" href={% url 'ver_persona' %}> ver personas </a>
             </div>
         </nav>
+        {% block mi_contenido %} 
+        {% endblock mi_contenido %}
      <!-- Footer-->
      <footer class="footer bg-light">
         <div class="container">
